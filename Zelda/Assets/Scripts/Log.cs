@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Log : Enemy
 {
+    //Rigid body 2d
+    private Rigidbody2D myRigidbody;
     //Player position
     public Transform target;
     //chase range
@@ -16,6 +18,8 @@ public class Log : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        //get rigidbosy of log
+        myRigidbody=GetComponent<Rigidbody2D>();
         //get player
         target = GameObject.FindWithTag("Player").transform;
 
@@ -32,7 +36,8 @@ public class Log : Enemy
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            myRigidbody.MovePosition(temp);
 
         }
     }

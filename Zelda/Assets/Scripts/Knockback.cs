@@ -17,9 +17,7 @@ public class Knockback : MonoBehaviour
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             if (enemy != null)
             {
-
-                //change enemy rigidbody to dynamic
-                enemy.isKinematic = false;
+                //calcultae difference between enemy and player to apply force on it
                 Vector2 difference = enemy.transform.position - transform.position;
                 difference = difference.normalized * thrust;
                 Debug.Log(difference);
@@ -33,11 +31,9 @@ public class Knockback : MonoBehaviour
     {
         if (enemy != null)
         {
-            //let the enemy be knockedback for a time before switching back to kinematic
+            //let enemy move in knockback direction for a time and stop
             yield return new WaitForSeconds(knockTime);
             enemy.velocity = Vector2.zero;
-            enemy.isKinematic = true;
-
         }
     }
 }

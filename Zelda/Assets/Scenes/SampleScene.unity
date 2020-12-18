@@ -1198,8 +1198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb346f4473b7c4d0f9cea5069827a2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 5
-  knockTime: 0
+  thrust: 10
+  knockTime: 5
 --- !u!1 &1294214123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,7 +1513,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736554144}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1523,7 +1523,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &1736554150
